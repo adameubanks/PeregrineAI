@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Peregrine AI",
+  "name": "PeregrineAI",
   "version": "0.1",
   "permissions": ["activeTab", "contextMenus", "scripting", "tabs", "storage"],
   "host_permissions": ["<all_urls>"],
