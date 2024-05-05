@@ -18,9 +18,9 @@ document.addEventListener('mouseup', function(e) {
   }
   //remove selected text
   else {
-    var textBox = document.querySelector('#showSelected');
-    if (textBox) {
-      document.body.removeChild(textBox);
+    var peregineLogo = document.querySelector('#showSelected');
+    if (peregineLogo) {
+      document.body.removeChild(peregineLogo);
     }
   }
 });
@@ -31,36 +31,24 @@ function showSelected(x, y, selectedText) {
   if (prevShowSelected) {
     document.body.removeChild(prevShowSelected);
   }
-  var textBox = document.createElement('div');
-  textBox.style.position = 'fixed';
-  textBox.style.zIndex = '999999999';
-  textBox.id = 'showSelected'
-  textBox.style.cursor = 'pointer';
-  textBox.style.left = '20px';
-  textBox.style.top = '20px';
-  textBox.style.maxWidth = '300px';
-  textBox.style.maxHeight = '100px';
-  textBox.style.padding = '10px';
-  textBox.style.fontSize = '16px';
-  textBox.style.borderRadius = '5px';
-  textBox.style.border = '1px solid #ccc';
-  textBox.style.backgroundColor = '#f8f8f8';
-  textBox.style.color = '#333';
-  textBox.innerHTML = "<i>Get info for: " + selectedText + "</i>";
-  document.body.appendChild(textBox);
+  var logo = document.createElement('img');
+  logo.style.position = 'fixed';
+  logo.style.zIndex = '999999999';
+  logo.id = 'showSelected'
+  logo.style.cursor = 'pointer';
+  logo.style.left = '20px';
+  logo.style.top = '20px';
+  logo.style.maxWidth = '300px';
+  logo.style.maxHeight = '100px';
+  logo.style.borderRadius = '5px';
+  logo.style.border = '1px solid #ccc';
+  logo.src = './PeregrineAILogo.png';
+  document.body.appendChild(logo);
 
-  // Add a click event listener to the textBox
-  textBox.addEventListener('click', function() {
-    //turn into loading box
-    textBox.innerHTML = "<i>Loading...</i>";
-    textBox.id = 'loadingBox';
-    fetch_gemini(selectedText)
-    .then(response => {
-      document.body.removeChild(textBox);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+  // Add a click event listener to the logo
+  logo.addEventListener('click', function() {
+    console.log('clicked');
+    fetch_gemini(selectedText);
   });
 }
 
