@@ -15,5 +15,10 @@
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "PeregrineAILogo.png",
+    "48": "PeregrineAILogo.png",
+    "128": "PeregrineAILogo.png"
+  }
 }
