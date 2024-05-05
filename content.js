@@ -17,9 +17,9 @@ document.addEventListener('mouseup', function(e) {
   }
   //remove selected text
   else {
-    var selectedBox = document.querySelector('#showSelected');
-    if (selectedBox) {
-      document.body.removeChild(selectedBox);
+    var imgBox = document.querySelector('#showSelected');
+    if (imgBox) {
+      document.body.removeChild(imgBox);
     }
   }
 });
@@ -37,14 +37,28 @@ function showSelected(selectedText) {
   imgBox.style.maxHeight = '50px';
 
   // Set the source of the image
-  imgBox.src = 'https://raw.githubusercontent.com/KhanradCoder/PeregrineAI/main/PeregrineAILogo.png?token=GHSAT0AAAAAACPQ5GBECEGV2UIEYFFEOSKYZRYCGJQ';
+  imgBox.src = 'https://raw.githubusercontent.com/KhanradCoder/PeregrineAI/main/PeregrineAILogo.png';
 
   document.body.appendChild(imgBox);
 
   // Add event listener to imgBox
   imgBox.addEventListener('click', function(event) {
+    console.log(selectedText);
     document.body.removeChild(imgBox);
-    
+    var textBox = document.createElement('div');
+    textBox.style.position = 'fixed';
+    textBox.style.zIndex = '999999999';
+    textBox.id = 'loadingBox'
+    textBox.style.left = '20px';
+    textBox.style.top = '20px';
+    textBox.style.padding = '10px';
+    textBox.style.fontSize = '16px';
+    textBox.style.borderRadius = '5px';
+    textBox.style.border = '1px solid #ccc';
+    textBox.style.backgroundColor = '#f8f8f8';
+    textBox.style.color = '#333';
+    textBox.innerHTML = "<i>Fetching info about: " + selectedText + "...</i>";
+    document.body.appendChild(textBox);
     fetch_gemini(selectedText)
       .then(response => {
         console.log(response);
