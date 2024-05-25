@@ -37,7 +37,7 @@ function showSelected(selectedText) {
   imgBox.style.maxHeight = '50px';
 
   // Set the source of the image
-  imgBox.src = 'https://raw.githubusercontent.com/KhanradCoder/PeregrineAI/main/PeregrineAILogo.png';
+  imgBox.src = 'https://raw.githubusercontent.com/adameubanks/PeregrineAI/main/PeregrineAILogo.png';
 
   document.body.appendChild(imgBox);
 
