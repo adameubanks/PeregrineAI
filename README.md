@@ -6,6 +6,8 @@ Peregrine AI is a free chrome extension bringing the power of LLMs to the browse
 
 With PeregrineAI, you can generate in-browser sticky-notes on selected text, elevating the browsing experience.
 
+[Watch the Demo](https://youtu.be/lnJjT2LKfJw)
+
 ## Installation
 1. Download the github repo
 2. Unzip the PeregrineAI folder (if necessary)
